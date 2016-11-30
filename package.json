@@ -1,0 +1,57 @@
+{
+  "name": "MEAN_STACK_2",
+  "version": "1.0.0-beta.4",
+  "description": "This is just a blue print for my mean stack applications.",
+  "private": "true",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon app.js",
+    "test": "mocha",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js -p"
+  },
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "body-parser": "*",
+    "compression": "*",
+    "connect-busboy": "*",
+    "cookie-parser": "*",
+    "csurf": "*",
+    "errorhandler": "*",
+    "express": "*",
+    "express-session": "^1.14.1",
+    "jshint": "^2.9.4",
+    "method-override": "*",
+    "moment": "^2.17.0",
+    "mongoose": "*",
+    "mongoskin": "*",
+    "morgan": "*",
+    "multer": "^1.2.0",
+    "nodemon": "* -g",
+    "oauth": "^0.9.14",
+    "pug": "*",
+    "serve-favicon": "^2.3.0",
+    "serve-index": "^1.8.0",
+    "session": "*",
+    "static-favicon": "*"
+  },
+  "author": "danny mcwaves",
+  "email": "dannymcwaves96@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DannyMcwaves/MEANSEED-2.git"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "expect.js": "^0.3.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "file-loader": "latest",
+    "jshint-loader": "^0.8.3",
+    "mocha": "^3.1.2",
+    "superagent": "^2.3.0",
+    "url-loader": "latest",
+    "webpack": "^2.1.0-beta.27"
+  }
+}
