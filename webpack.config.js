@@ -16,16 +16,21 @@ module.exports = function (env) {
         //      the values of those keys are those that are bundled. if the value of a key is an array, all
         //      all the files inside that array are bundled into one else if just a filename, hmmm what the use.
         entry: {
-            'vendorJS': ["./js/jquery-2.1.4.min.js", "./js/angular.min.js", './js/tether.min.js', "./js/bootstrap.min.js"],
-            "vendorCSS": ["./css/bootstrap.min.css", "./css/font-awesome.min.css"]
+            // pack all the vendor code that you will neec but do not have to change over time into one.
+            // Install vendor codes through npm and then pack them.
+            // specify the path to the js directory.Usually, it's just one file. if you need third party, require them in the entry.
+            'vendor':["./dev/js/jquery-2.1.4.min.js","./dev/js/angular.min.js",'./dev/js/tether.min.js', "./dev/js/bootstrap.min.js"],
+            // this is the path to the css files. Assuming you have any of them to bundle, just do it here.
+            "custom": ["./dev/css/bootstrap.min.css", "./dev/css/font-awesome.min.css"]
         },
 
         // this is where the bundled files should be outputed.
         // you specify a path for the output and a name of the new file created.
         // you specify a publicPath for the path where requets can find the bundled file.
+        // change the pathname and the name of the css file if you need another path for transfers.
         output: {
             path: "./dist",
-            filename: "[name].bundle.js",
+            filename: "./js/[name].min.js",
             publicPath: "./dist"
         },
 
@@ -41,14 +46,29 @@ module.exports = function (env) {
                     loader: ExtractTextPlugin.extract({ fallbackLoader: "style-loader", loader: "css-loader" })
                 },
                 {
-                    // load files with this type of extensions using file-loader instead of using the css-loader
                     // you can use either the url-loader plugin or the file-loader plugin. the url-loader loads the
-                    // base64 of the whole data while the file-loader writes the file in the as a normal src and then
+                    // base64 of the whole data while the file-loader writes the file as a normal src and then
                     // lets the server respond to it during a request.
                     // url-loader revolts back to file-loader if the file-type specified exceeds the limit provided in the query.
-                     test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                    // change the limit size if you need to.
+                     test: /\.(woff|woff2|eot|ttf|svg|otf)$/,
                      exclude: "node_modules",
-                     loader: 'url-loader?limit=450000&&emitFile=false'
+                     loader: 'url-loader?limit=10000&&emitFile=false'
+                },
+                {
+                    // this configuration is for png and gif files. If the files are less than 50KB, then write them in the file as
+                    // base64 data, avoiding various server requests. If not then just load them as src files.
+                    // change the limit size if you need to.
+                    test: /\.(png|gif)$/,
+                    exclude: "node_modules",
+                    loader: "url-loader?limit=50000&&emitFile=false"
+                },
+                {
+                    // so this configuration is going to parse large jpeg/jpg images and then use file loader to
+                    // load the src of the file and not write a base64 data format in the css file.
+                    test: /\.(jpeg|jpg)$/,
+                    exclude: "node_modules",
+                    loader: "file-loader?emitFile=false"
                 },
                 {
                     // setting up babel for react components and es6 file extensions.
@@ -67,8 +87,11 @@ module.exports = function (env) {
 
         plugins: [
             // extract the css files under multiple name.
-            new ExtractTextPlugin({ filename: "[name].bundle.css", allChunks: true, disable: false }),
-            new webpack.LoaderOptionsPlugin({debug:true, outputPathinfo: true, displayErrorDetails: true})
+            new ExtractTextPlugin({ filename: "./css/[name].min.css", allChunks: true, disable: false }),
+            new webpack.LoaderOptionsPlugin({debug:true, outputPathinfo: true, displayErrorDetails: true}),
+            new webpack.optimize.CommonsChunkPlugin('common.js'),
+            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.AggressiveMergingPlugin()
         ],
 
         // creating source maps of the files too, this is for the DEVELOPER MODE ONLY.
