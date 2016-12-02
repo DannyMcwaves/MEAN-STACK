@@ -69,10 +69,13 @@ app.use("/fonts", express.static("./fonts"));
 app.use("/images",  express.static("./images"));
 app.use("/js", express.static("./js"));
 app.use("/css", express.static("./css"));
+app.use("/dist", express.static("./dist"));
 
 // ROUTE the GETS, POSTS, PUTS, DELETES request that are coming to the server.
 app.get("/", routes.test);
-
+app.post("/", routes.test);
+app.put("/", routes.test);
+app.delete("/", routes.test);
 
 // if anything fails, such as 404 or Internal server error, let this error handler take care of it for us.
 app.use(errorhandler());
