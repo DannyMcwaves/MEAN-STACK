@@ -3,6 +3,7 @@
 // this should work well for me though
 // considering all the practices I have done so far
 // okay so let us just give this thing a shot.
+// MOCHA TESTS using superagent and expect.js
 
 let superagent = require("superagent"),
     expect = require("expect.js");
