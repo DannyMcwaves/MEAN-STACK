@@ -1,0 +1,10 @@
+@import "compass";
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/mixins";
+@import "partials/font";
+
+body{
+    background-color: $white;
+    color: $red;
+}

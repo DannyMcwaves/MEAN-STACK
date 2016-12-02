@@ -1,0 +1,9 @@
+@mixin border ($size : 1px, $color : black) {
+    border: $size solid $color;
+}
+
+@mixin backgroundImage ($image_path: "fractal.jpg") {
+    background-image: url("../images/photos/#{$image_path}");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
