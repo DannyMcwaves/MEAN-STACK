@@ -70,7 +70,7 @@ gulp.task('mocha', function() {
           expect: require("expect.js"),
           superagent: require("superagent")
       },
-      timeout: 10000
+      timeout: 60000
     }));
 });
 
@@ -99,11 +99,9 @@ gulp.task('compass', function() {
 
 // this will schedule all the tasks to run in the order I specify them and then watch for changes
 // on some of the files and then take the necessary action on them.
-gulp.task("default", function () {
+gulp.task("default", ["mocha"], function () {
     "use strict";
     runSequence(["webpack", "compass"], "minify-css", "browserSync", function () {
-        gulp.watch("./dev/sass/*.scss", ["compass"]);
-        gulp.watch("./dist/css/*.css").on("change", browserSync.reload)
-        gulp.watch("./test/*.js", ["mocha"]);
+            gulp.watch("./dev/sass/*.scss", ["compass"]);
     });
 })
