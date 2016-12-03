@@ -1,1 +1,3 @@
-![My MEAN IMAGE](url:https%3A%2F%2Fmeanjs.org%2Fimg%2Flogo.png&imgrefurl=https%3A%2F%2Fmeanjs.org%2F&docid=KkjXF5IfGjl0eM&tbnid=dKCznWdB-3xaAM%3A&vet=1&w=499&h=120&safe=active&client=ubuntu&bih=656&biw=1206&ved=0ahUKEwiz0oj40dfQAhUGMBoKHShTDkoQMwh_KFowWg&iact=mrc&uact=8)
+<p align="center">
+  <img src="http://meanjs.org/img/logo.png" title="MEAN STACK LOGO">
+</p>
