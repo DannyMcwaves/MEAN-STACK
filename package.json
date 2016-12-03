@@ -6,8 +6,8 @@
   "main": "app.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon app.js",
-    "test": "mocha",
-    "build": "./node_modules/.bin/webpack --config webpack.config.js -p"
+    "test": "./node_modules/.bin/mocha",
+    "gulp": "./node_modules/.bin/gulp"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
@@ -26,7 +26,7 @@
     "mongoskin": "*",
     "morgan": "*",
     "multer": "^1.2.0",
-    "nodemon": "* -g",
+    "nodemon": "*",
     "oauth": "^0.9.14",
     "pug": "*",
     "serve-favicon": "^2.3.0",
