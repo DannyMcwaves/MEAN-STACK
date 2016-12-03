@@ -49,7 +49,7 @@
 
 ###`INSTALLING DEPENDENCIES`
     `npm install`
-    Before running this you can check the package.json to remove dependencies you think you won't need.
+Before running this you can check the package.json to remove dependencies you think you won't need.
 
 ###`STARTING THE APP`
     `npm start`
@@ -59,32 +59,32 @@
 
 ###`BUNDLE WEB ASSETS`
     `npm run webpack`
-    you can configure the webpack.config.js file based on the needs of your app before running this commands
-    to bundle the assets specified in the config file.
+you can configure the webpack.config.js file based on the needs of your app before running this commands
+to bundle the assets specified in the config file.
 
 ###`AUTOMATING ALL TASKS`
     `npm run gulp`
-    gulp is used to automate all tasks including compiling sass files, minifying all images and fonts. Place all the assets in the corresponding folders in the dev directory and gulp will do all the trannsformation for you into the dist directory.
+gulp is used to automate all tasks including compiling sass files, minifying all images and fonts. Place all the assets in the corresponding folders in the dev directory and gulp will do all the trannsformation for you into the dist directory.
 
 ###`watch:js`
     `npm run webpack:watch`
-    this watches the entry point specified in the webpack.config.js files and rebundles the files on changes.
+this watches the entry point specified in the webpack.config.js files and rebundles the files on changes.
 
 ###`minify images`
     `npm run imagemin`
-    All the images to be minified should be in the dev folder and after minification, they are put in the dist directory automatically
+All the images to be minified should be in the dev folder and after minification, they are put in the dist directory automatically
 
 ###`compile sass files`
     `npm run sass`
-     the sass files are in the dev folder and are automatically put in the dist directory after compilation.
+the sass files are in the dev folder and are automatically put in the dist directory after compilation.
 
 ###`minify css files`
     `npm run minify-css`
-    Used to minify css files in any directory at all, but this one watches for files in the dist. Any files in the dist directory that are not minified
+Used to minify css files in any directory at all, but this one watches for files in the dist. Any files in the dist directory that are not minified
 
 ###`minifying fonts`
     `npm run fontmin`
-    this minifies font in the dev directory and places them automatically in the dist directory.
+this minifies font in the dev directory and places them automatically in the dist directory.
 
 ## Need help?
 Feel free to [create an issue](http://github.com/DannyMcwaves/MEAN-STACK/issues), [tweet me](http://twitter.com/DannyMcwaves), or [send me an email](mailto:dannymcwaves96@gmail.com). I'd be glad to help where I can!
