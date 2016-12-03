@@ -1,0 +1,7 @@
+{
+  "name": "MEAN-STACK",
+  "description": "A barebones Mean Stack app structure",
+  "repository": "https://github.com/DannyMcwaves/MEAN-STACK",
+  "logo": "http://meanjs.org/img/logo.png",
+  "keywords": ["node", "express", "static", "angular", "react", "angular2", "mongoDB"]
+}
