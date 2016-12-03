@@ -8,7 +8,12 @@
     "start": "./node_modules/.bin/nodemon app.js",
     "test": "./node_modules/.bin/mocha",
     "gulp": "./node_modules/.bin/gulp",
-    "webpack": "./node_modules/.bin/webpack --config webpack.config.js"
+    "webpack": "./node_modules/.bin/webpack --config webpack.config.js -p",
+    "webpack:watch": "./node_modules/.bin/webpack --watch -p",
+    "imagemin": "./node_modules/.bin/gulp imagemin",
+    "fontmin": "./node_modules/.bin/gulp font",
+    "sass": "./node_modules/.bin/gulp compass",
+    "minify-css": "./node_modules/.bin/gulp minify-css"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
