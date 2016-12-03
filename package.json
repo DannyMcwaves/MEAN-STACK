@@ -7,7 +7,8 @@
   "scripts": {
     "start": "./node_modules/.bin/nodemon app.js",
     "test": "./node_modules/.bin/mocha",
-    "gulp": "./node_modules/.bin/gulp"
+    "gulp": "./node_modules/.bin/gulp",
+    "webpack": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
