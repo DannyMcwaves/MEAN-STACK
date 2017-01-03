@@ -90,6 +90,4 @@ $(function () {
 		});
 	};
 
-	window.alert("what ever you want dear");
-
 }());
