@@ -5,8 +5,7 @@ let ExtractTextPlugin = require("extract-text-webpack-plugin"),
 // creating the config function theat retturns an object specifying the configurations of the
 // assets to be bundled.
 
-module.exports = function (env) {
-
+module.exports = function functionName(env) {
     return {
         context: __dirname,
 
@@ -14,7 +13,7 @@ module.exports = function (env) {
 
         output: {
             path: "./dist",
-            filename: "./js/vendor.min.js",
+            filename: "./js/react.vendor.min.js",
             publicPath: "./dist"
         },
 
@@ -45,8 +44,12 @@ module.exports = function (env) {
                     loader: "file-loader?emitFile=false"
                 },
                 {
+                    test: /.jsx?$/,
+                    loader: 'babel-loader'
+                },
+                {
                     // setting up babel for react components and es6 file extensions.
-                    test: /\.(js|jsx|es6)$/,
+                    test: /\.(js|es6)$/,
                     loader: "babel-loader"
                 }
             ]
@@ -54,17 +57,17 @@ module.exports = function (env) {
 
         resolve: {
 
-            extensions: [" ", "js", "es6"]
+            extensions: [" ", "js", "es6", "jsx"]
         },
 
         plugins: [
             // extract the css files under multiple name.
             new ExtractTextPlugin({ filename: "./css/vendor.min.css", allChunks: true, disable: false }),
             new webpack.LoaderOptionsPlugin({debug:true, outputPathinfo: true, displayErrorDetails: true}),
-            // new webpack.optimize.CommonsChunkPlugin('common.js'),
-            // new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.CommonsChunkPlugin('common.js'),
+            new webpack.optimize.UglifyJsPlugin(),
             new webpack.optimize.AggressiveMergingPlugin(),
-            new webpack.ProvidePlugin({   jQuery: 'jquery', $: 'jquery', jquery: 'jquery'})
+            new webpack.ProvidePlugin({   jQuery: 'jquery', $: 'jquery', jquery: 'jquery', Tether: "tether"})
         ],
 
         // devtool: "sourcemap",
