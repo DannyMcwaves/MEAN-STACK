@@ -1,20 +1,16 @@
+// using react and then jsx.
+// and then adding some virtual dom stuff to it.
 
-// css dependencies
-import "../css/font-awesome.min.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/css/bootstrap-flex.min.css";
-import "bootstrap/dist/css/bootstrap-reboot.min.css";
-import "bootstrap/dist/css/bootstrap-grid.min.css";
+// import {IndexRoute, IndexLink, Link, hashHistory, Router, Route} from 'react-router';
+import React from "react";
+import ReactDOM from "react-dom";
 
-// js dependencies
-import "core-js/client/shim.min.js";
-import "zone.js/dist/zone.js";
-import "reflect-metadata/Reflect.js";
-import $ from "jquery";
-window.jQuery = window.$ = $;
-import Tether from "tether";
-window.Tether = Tether;
-import "bootstrap/dist/js/bootstrap.min.js";
-import "./util.js";
 
-$("h1").Height();
+class Hello extends React.Component {
+  render() {
+    return <h1>Hello</h1>
+  }
+}
+
+
+ReactDOM.render(<Hello/>, document.getElementById('hello'));
