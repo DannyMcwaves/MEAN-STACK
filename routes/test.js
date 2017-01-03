@@ -6,6 +6,9 @@ router
     .get("/",  function(req, res) {
         res.render("test");
     })
+    .get("/react", (req, res) => {
+        res.render("react");
+    })
     .post("/", function(req, res) {
         res.send(req.body);
     })
