@@ -73,6 +73,7 @@ app.use("/dist", express.static("./dist"));
 
 // ROUTE the GETS, POSTS, PUTS, DELETES request that are coming to the server.
 app.get("/", routes.test);
+app.get("/react", routes.test);
 app.post("/", routes.test);
 app.put("/", routes.test);
 app.delete("/", routes.test);
