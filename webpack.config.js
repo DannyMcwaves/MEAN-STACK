@@ -5,7 +5,7 @@ let ExtractTextPlugin = require("extract-text-webpack-plugin"),
 // creating the config function theat retturns an object specifying the configurations of the
 // assets to be bundled.
 
-module.exports = function functionName(env) {
+module.exports = function (env) {
     return {
         context: __dirname,
 
@@ -53,11 +53,6 @@ module.exports = function functionName(env) {
                     loader: "babel-loader"
                 }
             ]
-        },
-
-        resolve: {
-
-            extensions: [" ", "js", "es6", "jsx"]
         },
 
         plugins: [
